@@ -163,7 +163,7 @@ export function calculateTax(amount: number): number {
 /**
  * @deprecated Will be removed in v3.0
  */
-export { LegacyAdapter } from './legacy-adapter'
+export { LegacyAdapter } from "./legacy-adapter"
 ```
 
 ### Example 3: Callback Parameter

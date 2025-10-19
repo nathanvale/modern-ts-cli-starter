@@ -7,5 +7,12 @@
     "context7",
     "tavily-mcp",
     "puppeteer"
-  ]
+  ],
+  "permissions": {
+    "allow": [
+      "Read(//Users/nathanvale/code/capture-bridge/**)",
+      "Bash(rm .prettierrc.json)",
+      "Bash(npm run format)"
+    ]
+  }
 }

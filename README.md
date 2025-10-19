@@ -1,6 +1,7 @@
 # modern-ts-cli-starter
 
-Modern TypeScript CLI: Node 22.20 ESM, tsc-only build, ESLint v9 flat, Prettier 3, Changesets, env via `--env-file`.
+Modern TypeScript CLI: Node 22.20 ESM, tsc-only build, ESLint v9 flat, Prettier
+3, Changesets, env via `--env-file`.
 
 ## Quick start
 

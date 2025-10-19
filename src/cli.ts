@@ -27,10 +27,7 @@ function usage(): string {
   ].join('\n')
 }
 
-async function main(
-  argv: Array<string>,
-  env: NodeJS.ProcessEnv,
-): Promise<number> {
+async function main(argv: Array<string>, env: NodeJS.ProcessEnv): Promise<number> {
   const args0: Array<string> = argv.slice(2)
   const { values, positionals } = parseArgs({
     args: args0,
@@ -42,8 +39,7 @@ async function main(
     strict: false,
   })
 
-  const verboseFlag =
-    typeof values.verbose === 'boolean' ? values.verbose : false
+  const verboseFlag = typeof values.verbose === 'boolean' ? values.verbose : false
   const flags: GlobalFlags = { verbose: verboseFlag }
 
   if (values.help || positionals.length === 0) {
@@ -82,11 +78,7 @@ function runGreet(args: Array<string>, flags: GlobalFlags): number {
   return 0
 }
 
-function runEnv(
-  _args: Array<string>,
-  flags: GlobalFlags,
-  env: NodeJS.ProcessEnv,
-): number {
+function runEnv(_args: Array<string>, flags: GlobalFlags, env: NodeJS.ProcessEnv): number {
   logInfo('Reading environment…', flags)
   const token = env.MY_STARTER_TOKEN ? '<set>' : '<missing>'
   const ci = isCi(env) ? 'yes' : 'no'
@@ -97,8 +89,6 @@ function runEnv(
 main(process.argv, process.env)
   .then((code) => process.exit(code))
   .catch((err) => {
-    console.error(
-      err instanceof Error ? (err.stack ?? err.message) : String(err),
-    )
+    console.error(err instanceof Error ? (err.stack ?? err.message) : String(err))
     process.exit(1)
   })

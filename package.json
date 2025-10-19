@@ -35,7 +35,8 @@
     "test:watch": "vitest",
     "coverage": "vitest run --coverage",
     "commitlint": "commitlint --edit $GIT_PARAMS || true",
-    "quality-check": "quality-check"
+    "quality-check": "quality-check",
+    "quality-check:ci": "quality-check --since origin/main --safe --fix"
   },
   "engines": {
     "node": ">=22.20"
