@@ -1,0 +1,61 @@
+{
+  "name": "modern-ts-cli-starter",
+  "version": "0.0.0",
+  "description": "Modern TypeScript CLI with tsc-only build, ESLint flat, Prettier, Changesets, Node 22.20.",
+  "type": "module",
+  "bin": {
+    "modern-cli": "./dist/cli.js"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist/**",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "clean": "rimraf dist .tsbuildinfo 2>/dev/null || true",
+    "dev": "pnpm build && node --env-file=.env ./dist/cli.js",
+    "start": "node --env-file=.env ./dist/cli.js",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier -w .",
+    "prepare": "pnpm build",
+    "version:gen": "changeset",
+    "release": "changeset publish",
+    "test": "node -e \"console.log('add vitest when ready')\""
+  },
+  "engines": {
+    "node": ">=22.20"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "license": "MIT",
+  "keywords": [
+    "typescript",
+    "cli",
+    "eslint-flat",
+    "prettier",
+    "changesets"
+  ],
+  "devDependencies": {
+    "@eslint/js": "^9.38.0",
+    "@types/node": "^24.8.1",
+    "changesets": "^1.0.2",
+    "eslint": "^9.38.0",
+    "prettier": "^3.6.2",
+    "prettier-plugin-sort-json": "^4.1.1",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.46.1"
+  }
+}
